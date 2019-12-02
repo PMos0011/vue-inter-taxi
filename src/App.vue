@@ -3,6 +3,7 @@
     <app-Navbar></app-Navbar>
     <app-MobileApp></app-MobileApp>
     <app-Contact></app-Contact>
+    <app-Footer></app-Footer>
   </v-app>
 </template>
 
@@ -10,6 +11,7 @@
 import Navbar from "./components/Navbar";
 import MobileApp from "./components/MobileAppContainer";
 import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 export default {
   name: "App",
@@ -17,7 +19,8 @@ export default {
   components: {
     appNavbar: Navbar,
     appMobileApp: MobileApp,
-    appContact:Contact
+    appContact:Contact,
+    appFooter:Footer
   },
 
   data: () => ({
