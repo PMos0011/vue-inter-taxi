@@ -2,7 +2,7 @@
   <v-app-bar prominent fixed shrink-on-scroll elevate-on-scroll color="#ffd54c">
     <template v-slot:img>
       <v-img
-        src="../images/inter_logo.webp"
+        src="../images/inter_logo_transpa.png"
         height="60%"
         contain
         position="left"
@@ -76,4 +76,5 @@
 </template>
 <script></script>
 
-<style></style>
+<style>
+</style>
