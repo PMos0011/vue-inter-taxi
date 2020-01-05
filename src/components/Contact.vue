@@ -4,13 +4,15 @@
     <v-layout class="mt-8" row wrap justify-center
       > <v-flex class="top-index" lg4 xs8>
         <p class="display-3 font-weight-medium">Kontakt</p>
-        <p class="bold-text">Zamów pod numerami:</p>
+        <p class="bold-text mt-12">Zamów pod numerami:</p>
         <a href="tel:+48505159191"
           ><p class="normal-text">757 719 919 lub 505 159 191</p></a
+        > <a href="tel:19196"
+          ><p class="bold-text">19 196</p></a
         >
-        <p class="bold-text">lub napisz:</p>
-        <a href=""
-          ><p class="normal-text">bok@intertaxi.zgorzelec.eu</p></a
+        <p class="bold-text mt-12">lub napisz:</p>
+        <a href="mailto:intertaxi.zgorzelec@gmail.com"
+          ><p class="normal-text">intertaxi.zgorzelec@gmail.com</p></a
         >
       </v-flex>
       <v-flex lg4 xs8 
@@ -34,17 +36,16 @@
 .bold-text {
   font-size: 2em;
   font-weight: bold;
-  margin-top: 1.5em;
+  color: black;
 }
 .normal-text {
   font-size: 1.5em;
-  text-decoration: none;
   color: black;
-  
 }
 a {
   text-decoration: none;
 }
+
 .background {
   position: absolute;
   top: 0;
@@ -60,4 +61,5 @@ a {
 .top-index{
   z-index: 1;
 }
+
 </style>

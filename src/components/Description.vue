@@ -1,46 +1,64 @@
 <template>
   <v-card flat color="#fff24c">
     <v-layout class="mt-8 mb-8" row wrap justify-center>
-      <v-flex lg5 xs11 class="ml-2 mt-4">
+      <v-flex lg5 xs11 class="ml-2 mt-4" id="about-us">
         <v-hover v-slot:default="{ hover }">
           <v-card
             :elevation="hover ? 8 : 0"
             class="pb-8 pt-8 pl-2 pr-2"
             color="#fff24c"
-            ><v-layout row wrap justify-space-around>
-              <v-flex xs10 sm5 class="mt-4">
-                <v-img src="../images/inter_logo_transpa.png" contain></v-img
-              ></v-flex>
-              <v-flex xs10 sm6 class="mt-4">
-                <p class="display-1 font-weight-black mt-n2">ROK ZAŁOŻENIA 1933</p>
-              </v-flex></v-layout
-            >
-            <v-flex class="text-justify pa-6">
-              <p class="display-1 mt-8">
+          >
+            <v-flex>
+              <v-img src="../images/logo_year1933.png" contain></v-img
+            ></v-flex>
+
+            <v-flex class="text-justify pa-6 mt-8">
+              <p
+                :class="{
+                  headline: $vuetify.breakpoint.smAndDown,
+                  'display-1': $vuetify.breakpoint.mdAndUp
+                }"
+              >
                 <b>RADIO >>INTER<< TAXI</b><br />
                 to firma z tradycjami, założona w 1993 roku.
               </p>
-              <p class="headline">
+              <p
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  headline: $vuetify.breakpoint.mdAndUp
+                }"
+              >
                 Doświadczenie zdobyte na przestrzeni lat pozwoliło nam
                 wypracować system pracy najbardziej przyjazny dla naszych
                 klientów. Dziś, idąc z duchem czasu i wychodząc na przeciw
                 oczekiwaniom naszych Klientów stajemy się dla Was firmą on-line.
               </p>
-              <p class="headline">
-                Wchodząc na naszą stronę możesz pobrać <b>APLIKACJĘ</b> i
-                zamówić taksówkę bez dzwonienia na infolinię. Dzięki
-                <b>APLIKACJI</b> wiesz kiedy Twoja taksówka dojedzie na miejsce
-                i nie musisz już czekać w słońcu, deszczu, na mrozie...
+              <p
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  headline: $vuetify.breakpoint.mdAndUp
+                }"
+              >
+                Wchodząc na naszą stronę możesz pobrać
+                <a @click="elemScroll()">APLIKACJĘ</a> i zamówić taksówkę bez
+                dzwonienia na infolinię. Dzięki  <a @click="elemScroll()">APLIKACJI</a> wiesz kiedy
+                Twoja taksówka dojedzie na miejsce i nie musisz już czekać w
+                słońcu, deszczu, na mrozie...
               </p>
-              <p class="headline">
-                Pobierz <b>APLIKACJĘ</b> i oszczędzaj swój czas, a my dołożymy
+              <p
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  headline: $vuetify.breakpoint.mdAndUp
+                }"
+              >
+                Pobierz <a @click="elemScroll()">APLIKACJĘ</a> i oszczędzaj swój czas, a my dołożymy
                 starań abyś dotarł na miejsce szybko i bezpiecznie.
               </p></v-flex
             ></v-card
           ></v-hover
         >
       </v-flex>
-      <v-flex lg5 xs11 class="ml-2 mt-4">
+      <v-flex lg5 xs11 class="ml-2 mt-4" id="services">
         <v-hover v-slot:default="{ hover }">
           <v-card
             :elevation="hover ? 8 : 0"
@@ -140,9 +158,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    elemScroll() {
+      window.scrollTo({
+        top: document.getElementById("applications").offsetTop - 150,
+        behavior: "smooth"
+      });
+    }
+  }
+};
 </script>
 
-<style>
-
+<style scoped>
+.v-application a {
+  font-weight: bold;
+  color: black;
+}
 </style>

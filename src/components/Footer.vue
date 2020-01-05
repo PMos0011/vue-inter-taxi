@@ -1,6 +1,6 @@
 <template>
   <v-card class="text-left" color="#fff24c" flat>
-    <v-dialog v-model="dialog" width="60%">
+    <v-dialog width="60%">
       <template v-slot:activator="{ on }">
         <v-btn text color="black" dark v-on="on">
           Polityka prywatności

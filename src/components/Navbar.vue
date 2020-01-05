@@ -15,10 +15,20 @@
 
         <v-toolbar class="mb-12 hidden-md-and-down" color="transparent" flat>
           <v-spacer></v-spacer
-          ><v-btn large text rounded class="mr-2 headline font-weight-bold"
+          ><v-btn
+            large
+            text
+            rounded
+            class="mr-2 headline font-weight-bold"
+            v-on:click.native="elemScroll('about-us')"
             >o nas</v-btn
           >
-          <v-btn large text rounded class="mr-2 headline font-weight-bold"
+          <v-btn
+            large
+            text
+            rounded
+            class="mr-2 headline font-weight-bold"
+            v-on:click.native="elemScroll('services')"
             >usługi</v-btn
           >
           <v-btn
@@ -34,23 +44,42 @@
 
         <v-menu>
           <template v-slot:activator="{ on }">
+            
             <v-app-bar-nav-icon
               large
               class="hidden-lg-and-up"
               v-on="on"
             ></v-app-bar-nav-icon>
+            <v-btn
+            large
+            class="mr-4 hidden-lg-and-up"
+            rounded
+            dark
+            href="tel: +48505159191"
+            ><v-icon large dark>mdi-phone</v-icon
+            ></v-btn
+          >
           </template>
           <v-list color="#ffd54c"
             ><v-list-item>
               <v-list-item-title
-                ><v-btn text rounded class="mr-2 font-weight-bold"
-                  >o nas</v-btn
+                ><v-btn
+                  text
+                  rounded
+                  class="mr-2 font-weight-bold"
+                  v-on:click.native="elemScroll('about-us')"
+                >
+                  o nas</v-btn
                 ></v-list-item-title
               ></v-list-item
             >
             <v-list-item>
               <v-list-item-title
-                ><v-btn text rounded class="mr-2 font-weight-bold"
+                ><v-btn
+                  text
+                  rounded
+                  class="mr-2 font-weight-bold"
+                  v-on:click.native="elemScroll('services')"
                   >usługi</v-btn
                 ></v-list-item-title
               ></v-list-item
@@ -74,7 +103,22 @@
     </template>
   </v-app-bar>
 </template>
-<script></script>
+<script>
+export default {
+  methods: {
+    elemScroll(elemId) {
+      var elem = document.getElementById(elemId);
+      var offset = -100;
+      if (screen.width <= 600) {
+        offset = 300;
+      }
+      window.scrollTo({
+        top: elem.offsetTop + elem.offsetHeight + offset,
+        behavior: "smooth"
+      });
+    }
+  }
+};
+</script>
 
-<style>
-</style>
+<style></style>
